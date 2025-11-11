@@ -80,7 +80,9 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const responseObject = {};
 
 export const initiateBrowser = async () => {
-    return await puppeteer.launch({ 'args' : [
+    return await puppeteer.launch({
+        executablePath: '/usr/bin/chromium',
+        'args' : [
         '--no-sandbox',
         '--disable-setuid-sandbox'
     ]});
